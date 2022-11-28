@@ -1,4 +1,4 @@
-# asani-helper Asani@2022
+# asani-helper@2022
 ## How to use
 - get to your repo project, below example:
 ```
