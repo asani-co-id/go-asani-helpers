@@ -26,7 +26,7 @@ import (
 - if wanted to reponse of fiber in asani you can use this helpers so , all respone will be same structure in 1 call,base on status code
 - example,
 ```
-func GetTestWhateverFunction(c *fiber.Ctx) error { 
+func AnyControllersFunction(c *fiber.Ctx) error { 
 
     return asaniHelpers.FiberReponses(c,fiber.StatusOK,"", "whatever message success", "whatever data wanted to return to reponse") 
 }
@@ -47,5 +47,5 @@ func GetTestWhateverFunction(c *fiber.Ctx) error {
     StatusNoConten = 204
 ```
 
-- if you have any inputs just PR , and have fun .
+- if you have any inputs just fork, PR , merge , and have fun .
 
