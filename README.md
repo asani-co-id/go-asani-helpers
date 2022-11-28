@@ -28,7 +28,7 @@ import (
 ```
 func AnyControllersFunction(c *fiber.Ctx) error { 
 
-    return asaniHelpers.FiberReponses(c,fiber.StatusOK,"", "whatever message success", "whatever data wanted to return to reponse") 
+    return asaniHelpers.FiberReponses(c,fiber.StatusOK,"whatever status", "whatever message success", "whatever data wanted to return to reponse") 
 }
  
 ```  
