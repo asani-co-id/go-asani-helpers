@@ -52,6 +52,10 @@ func (m *Response) noContentContext(ctx *fiber.Ctx) error {
 	return ctx.Status(fiber.StatusNoContent).JSON(&m)
 }
 
+func (m *Response) statusExpectationFailed(ctx *fiber.Ctx) error {
+	return ctx.Status(fiber.StatusExpectationFailed).JSON(&m)
+}
+
 func FiberReponses(ctx *fiber.Ctx, code int, status interface{}, message interface{}, data interface{}) error {
 	response := Response{
 		Status:  status,
@@ -78,6 +82,8 @@ func FiberReponses(ctx *fiber.Ctx, code int, status interface{}, message interfa
 		return response.tooManyRequestContext(ctx)
 	case http.StatusRequestEntityTooLarge:
 		return response.entitiesTooLargeContext(ctx)
+	case http.StatusExpectationFailed:
+		return response.statusExpectationFailed(ctx)
 	default:
 		return response.noContentContext(ctx)
 	}
